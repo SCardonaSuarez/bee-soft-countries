@@ -3,3 +3,21 @@
 <ul>
   <li *ngFor="let country of countries">{{ country.name }}</li>
 </ul>
+
+
+<div class="container">
+
+  <form #myprettyform="ngForm" ngSubmit="submit">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label" >Country</label>
+      <input type="text" class="form-control" [(ngModel)]="newCountry.name"  aria-describedby="emailHelp"  name="text">
+
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label" >Capital</label>
+      <input type="text" class="form-control" [(ngModel)]="newCountry.capital"  aria-describedby="emailHelp"  name="text">
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="saveCountry()" >Submit</button>
+  </form>
+</div>
